@@ -56,7 +56,10 @@ def escrever_numero_por_extenso(valor):
     resultado = " e ".join([p for p in partes if p])
 
     if decimal > 0:
-        resultado += ", vírgula, " + numero_para_extenso(decimal)
+        if decimal < 10:
+            resultado += ", vírgula, zero " + numero_para_extenso(decimal)
+        else:
+            resultado += ", vírgula, " + numero_para_extenso(decimal)
 
     return resultado
 
